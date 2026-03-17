@@ -57,16 +57,47 @@ Database (MongoDB / MySQL)
 * OpenAI
 
 ---
+## 🔐 Environment Configuration
+
+Create a `.env` file in `backend/`:
+
+```env
+DATABASE_URL=sqlite:///site.db
+SECRET_KEY=your_secret_key
+JWT_SECRET_KEY=your_jwt_secret
+OPENAI_API_KEY=your_api_key
+GEMINI_API_KEY=your_api_key
+OPENROUTER_API_KEY=your_api_key
+```
+
+
 
 ##  Project Structure
 
 ```
+## 📁 Repository Structure
+
+```text
 wellbot/
+│
 ├── backend/
+│   ├── app/
+│   │   ├── routes/        # API endpoints (auth, chat, analytics)
+│   │   ├── services/      # AI, OCR, scheduler logic
+│   │   └── models.py      # Database schema
+│   │
+│   ├── migrations/        # Database versioning (Alembic)
+│   ├── config.py          # Configuration management
+│   └── run.py             # Entry point
+│
 ├── frontend/
-├── tmp/
-├── requirements.txt
-└── README.md
+│   ├── src/
+│   │   ├── components/    # UI components
+│   │   ├── pages/         # Application pages
+│   │   ├── services/      # API integration
+│   │   └── i18n.js        # Localization setup
+│
+└── documents/             # Reports & supporting materials
 ```
 
 ---
@@ -112,10 +143,6 @@ npm run dev
 * Track health data
 
 ---
-
-## Screenshots
-
-(Add your screenshots here)
 
 ---
 
